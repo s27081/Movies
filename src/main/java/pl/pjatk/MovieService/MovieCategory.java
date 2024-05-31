@@ -1,7 +1,7 @@
 package pl.pjatk.MovieService;
 
 public enum MovieCategory {
-    SciFi("Sci-Fi"),
+    SciFi("SciFi"),
     Comedy("Comedy"),
     Horror("Horror"),
     Action("Action");

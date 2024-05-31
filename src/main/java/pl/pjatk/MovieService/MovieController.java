@@ -17,7 +17,7 @@ public class MovieController {
     }
 
     @GetMapping("/movies")
-    public ResponseEntity<List<Movie>> movieList(){
+    public ResponseEntity<List<Movie>> movieList() throws MovieBadRequestException{
         return ResponseEntity.ok(movieService.getMovieList());
     }
 
@@ -39,6 +39,7 @@ public class MovieController {
         updatedMovie.setName(movie.getName());
         updatedMovie.setMovieCategory(movie.getMovieCategory());
         updatedMovie.setYearProduction(movie.getYearProduction());
+        movieService.addMovie(updatedMovie);
         return ResponseEntity.ok(updatedMovie);
     }
 

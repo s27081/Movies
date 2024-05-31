@@ -17,18 +17,15 @@ public class MovieService {
         return movieJpaRepository.getAllMovies();
     }
 
-
     public Movie getMovieByID(Integer id) {
         return movieJpaRepository.findMovieById(id);
 
     }
-
     public void addMovie(Movie movie) {
-        movieJpaRepository.addMovie(movie);
+        movieJpaRepository.save(movie);
     }
 
     public void deleteMovie(Integer id) {
-        movieJpaRepository.deleteMovieById(id);
-
+        movieJpaRepository.deleteById(id);
     }
 }
