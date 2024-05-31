@@ -1,20 +1,21 @@
 package pl.pjatk.MovieService;
 
+import jakarta.persistence.*;
 
+
+@Entity
 public class Movie {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String name;
+    @Enumerated(EnumType.STRING)
     private MovieCategory movieCategory;
 
     private Integer yearProduction;
 
-    public Movie(Integer id, String name, MovieCategory movieCategory, Integer yearProduction) {
-        this.id = id;
-        this.name = name;
-        this.movieCategory = movieCategory;
-        this.yearProduction = yearProduction;
+    public Movie() {
     }
 
     public Integer getId() {
