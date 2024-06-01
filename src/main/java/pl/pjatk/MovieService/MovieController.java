@@ -48,4 +48,13 @@ public class MovieController {
         movieService.deleteMovie(id);
         return ResponseEntity.ok().build();
     }
+
+    @PutMapping("/movies/bool/{isAvailable}/{id}")
+    public ResponseEntity<Movie> updateIsAvailable(@PathVariable Integer id, @PathVariable Boolean isAvailable) throws MovieNotFoundException {
+        Movie updatedIsAvailable = movieService.getMovieByID(id);
+        updatedIsAvailable.setAvailable(isAvailable);
+        movieService.addMovie(updatedIsAvailable);
+        return ResponseEntity.ok(updatedIsAvailable);
+    }
+
 }

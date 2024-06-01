@@ -1,6 +1,8 @@
 package pl.pjatk.MovieService;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
+import org.springframework.boot.context.properties.bind.DefaultValue;
 
 
 @Entity
@@ -14,6 +16,9 @@ public class Movie {
     private MovieCategory movieCategory;
 
     private Integer yearProduction;
+
+
+    private Boolean isAvailable;
 
     public Movie() {
     }
@@ -48,5 +53,13 @@ public class Movie {
 
     public void setYearProduction(Integer yearProduction) {
         this.yearProduction = yearProduction;
+    }
+
+    public Boolean getAvailable() {
+        return isAvailable;
+    }
+
+    public void setAvailable(Boolean isAvailable) {
+        this.isAvailable = isAvailable;
     }
 }
