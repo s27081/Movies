@@ -16,6 +16,6 @@ public class ExceptionController {
 
     @ExceptionHandler(MovieBadRequestException.class)
     public ResponseEntity<String> handleBadRequestException(MovieBadRequestException movieBadRequestException){
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error ID added to body");
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error bad request");
     }
 }
